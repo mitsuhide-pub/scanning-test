@@ -1,0 +1,25 @@
+name: issue
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  issue:
+    name: issue
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - uses: rishabhgupta/git-action-issue@v2
+      id: Issue
+      with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: TEST
+          body: |
+            ## TEST
+            **HOGEHOGE**
+            - **fugafuga**
+            あいうえお
+            
