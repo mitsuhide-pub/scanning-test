@@ -20,6 +20,7 @@ jobs:
           body: |
             ## TEST
             **HOGEHOGE**
-            - **fugafuga**\n
+            - **fugafuga**
+            
             あいうえお
             
