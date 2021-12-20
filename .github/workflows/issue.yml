@@ -20,7 +20,12 @@ jobs:
           body: |
             ## TEST
             **HOGEHOGE**
-            - **fugafuga**
+            - **Critical:**       a
+            - **High:**           b
+            - **Medium:**         c
+            - **Low:**            d
+            - **Informational:**  e
+            - **Undefined :**     f
             
             あいうえお
             
