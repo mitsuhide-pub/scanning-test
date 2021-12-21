@@ -24,6 +24,10 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-node-
     
+    - name: aws-sdk install
+      run: |
+        npm install aws-sdk    
+    
     - name: AWS ECR Scan Docker Image
       uses: alexjurkiewicz/ecr-scan-image@v1.7.0
       with:
