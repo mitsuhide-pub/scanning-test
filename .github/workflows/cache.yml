@@ -26,15 +26,16 @@ jobs:
     
     - name: aws-sdk install
       run: |
-        npm install aws-sdk    
-    
-  scan:
-    name: scan
-    needs: cache
-    runs-on: ubuntu-latest
-    steps:
-    - name: AWS ECR Scan Docker Image
-      uses: alexjurkiewicz/ecr-scan-image@v1.7.0
+        npm install aws-sdk
+    - uses: mokocm/ecr-imagescan-action@v3
       with:
-        repository: ${{ secrets.ECR_REPO_NAME }}
-        tag: ${{ steps.docker-tag.outputs.IMAGE_TAG_1 }}
+        image-digest: ${{ steps.build-image.outputs.digest }}
+        image-tag: ${{ github.sha }}
+        repository-name: ${{ steps.build-image.outputs.repository-name }}
+        trigger-severity: "CRITICAL"
+        
+#     - name: AWS ECR Scan Docker Image
+#       uses: alexjurkiewicz/ecr-scan-image@v1.7.0
+#       with:
+#         repository: ${{ secrets.ECR_REPO_NAME }}
+#         tag: ${{ steps.docker-tag.outputs.IMAGE_TAG_1 }}
