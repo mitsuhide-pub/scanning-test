@@ -28,6 +28,11 @@ jobs:
       run: |
         npm install aws-sdk    
     
+  scan:
+    name: scan
+    needs: cache
+    runs-on: ubuntu-latest
+    steps:
     - name: AWS ECR Scan Docker Image
       uses: alexjurkiewicz/ecr-scan-image@v1.7.0
       with:
