@@ -12,16 +12,17 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Set Node.js 12.x
-      uses: actions/setup-node@v1.3.0
+    - uses: actions/setup-node@v1
       with:
-        node-version: 12.x
-    - uses: actions/cache@v1.0.3
+        node-version: '12'
+
+    - name: Cache dependencies
+      uses: actions/cache@v2
       with:
         path: ~/.npm
-        key: node-${{ hashFiles('**/package-lock.json') }}
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
-          node-
+          ${{ runner.os }}-node-
     
     - name: AWS ECR Scan Docker Image
       uses: alexjurkiewicz/ecr-scan-image@v1.7.0
