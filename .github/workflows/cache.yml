@@ -12,21 +12,16 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Cache node modules
-      uses: actions/cache@v2
-      env:
-        cache-name: cache-node-modules
+    - name: Set Node.js 12.x
+      uses: actions/setup-node@v1.3.0
       with:
-        # npm cache files are stored in `~/.npm` on Linux/macOS
+        node-version: 12.x
+    - uses: actions/cache@v1.0.3
+      with:
         path: ~/.npm
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        key: node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
-          ${{ runner.os }}-build-${{ env.cache-name }}-
-          ${{ runner.os }}-build-
-          ${{ runner.os }}-
-
-    - name: Install Dependencies
-      run: npm install
+          node-
     
     - name: AWS ECR Scan Docker Image
       uses: alexjurkiewicz/ecr-scan-image@v1.7.0
