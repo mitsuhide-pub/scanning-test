@@ -1,0 +1,19 @@
+name: cache
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  cache:
+    name: cache
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: AWS ECR Scan Docker Image
+      uses: alexjurkiewicz/ecr-scan-image@v1.7.0
+      with:
+        repository: ${{ secrets.ECR_REPO_NAME }}
+        tag: ${{ steps.docker-tag.outputs.IMAGE_TAG_1 }}
