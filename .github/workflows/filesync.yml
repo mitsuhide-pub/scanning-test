@@ -10,10 +10,10 @@ env:
     mitsuhide-pub/a
   
   WORKFLOW_FILES: |
-    workflow-templates/helloworld.yml=.github/workflows/helloworld.yml
+    src/python/helloworld.py=/helloworld.py
 
 jobs:
-  Github_Workflow_Sync:
+  sync:
     runs-on: ubuntu-latest
     steps:
       - name: Set COMMIT_MESSAGE
