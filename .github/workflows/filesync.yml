@@ -8,6 +8,33 @@ env:
   PULL_REQUEST: true
   REPOSITORIES: |
     mitsuhide-pub/a
+    mitsuhide-pub/b
+    mitsuhide-pub/c
+    mitsuhide-pub/d
+    mitsuhide-pub/e
+    mitsuhide-pub/e
+    mitsuhide-pub/f
+    mitsuhide-pub/g
+    mitsuhide-pub/h
+    mitsuhide-pub/i
+    mitsuhide-pub/j
+    mitsuhide-pub/k
+    mitsuhide-pub/l
+    mitsuhide-pub/m
+    mitsuhide-pub/n
+    mitsuhide-pub/o
+    mitsuhide-pub/p
+    mitsuhide-pub/q
+    mitsuhide-pub/r
+    mitsuhide-pub/s
+    mitsuhide-pub/t
+    mitsuhide-pub/u
+    mitsuhide-pub/v
+    mitsuhide-pub/w
+    mitsuhide-pub/x
+    mitsuhide-pub/y
+    mitsuhide-pub/z
+    
   
   WORKFLOW_FILES: |
     src/python/helloworld.py=/helloworld.py
