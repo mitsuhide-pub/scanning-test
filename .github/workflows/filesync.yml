@@ -55,7 +55,7 @@ jobs:
           PULL_REQUEST: ${{ env.PULL_REQUEST }}
           REPOSITORIES: ${{ env.REPOSITORIES }}
           WORKFLOW_FILES: ${{ env.WORKFLOW_FILES }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.SUZUKIPAT }}
           COMMIT_MESSAGE: ${{ env.COMMIT_MESSAGE }}
           RETRY_MODE: true
           
