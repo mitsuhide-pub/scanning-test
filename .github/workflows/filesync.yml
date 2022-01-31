@@ -57,5 +57,5 @@ jobs:
           WORKFLOW_FILES: ${{ env.WORKFLOW_FILES }}
           GITHUB_TOKEN: ${{ secrets.SUZUKIPAT }}
           COMMIT_MESSAGE: ${{ env.COMMIT_MESSAGE }}
-          RETRY_MODE: true
+          RETRY_MODE: false
           
